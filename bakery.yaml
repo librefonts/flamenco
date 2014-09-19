@@ -1,0 +1,6 @@
+commit: HEAD
+process_files: [Flamenco-Regular.ttf.ttx, Flamenco-Light.ttf.ttx, src/Flamenco-Light.otf.ttx,
+  src/Flamenco-Regular.otf.ttx, src/Flamenco-Regular-TTF.sfd, src/Flamenco-Light-TTF.sfd]
+pyftsubset: --notdef-outline --name-IDs=* --hinting
+subset: [latin]
+ttfautohint: -l 7 -r 28 -G 50 -x 13 -w "G"

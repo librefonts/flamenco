@@ -1,0 +1,646 @@
+# Bake Begins!
+### (1 of 6) Copy sources
+$ cp -a /home/travis/build/fontdirectory/flamenco/METADATA.json /home/travis/build/fontdirectory/flamenco/builds/build
+$ cp -a /home/travis/build/fontdirectory/flamenco/DESCRIPTION.en_us.html /home/travis/build/fontdirectory/flamenco/builds/build
+$ cp -a Flamenco-Regular.ttf.ttx Flamenco-Light.ttf.ttx src/Flamenco-Light.otf.ttx src/Flamenco-Regular.otf.ttx src/Flamenco-Regular-TTF.sfd src/Flamenco-Light-TTF.sfd Flamenco-Regular.ttf.GlyphOrder.ttx Flamenco-Regular.ttf._l_o_c_a.ttx Flamenco-Regular.ttf.G_D_E_F_.ttx Flamenco-Regular.ttf._c_m_a_p.ttx Flamenco-Regular.ttf.O_S_2f_2.ttx Flamenco-Regular.ttf._h_h_e_a.ttx Flamenco-Regular.ttf._g_a_s_p.ttx Flamenco-Regular.ttf._p_o_s_t.ttx Flamenco-Regular.ttf._h_e_a_d.ttx Flamenco-Regular.ttf._n_a_m_e.ttx Flamenco-Regular.ttf.G_P_O_S_.ttx Flamenco-Regular.ttf.G_S_U_B_.ttx Flamenco-Regular.ttf.F_F_T_M_.ttx Flamenco-Regular.ttf._g_l_y_f.ttx Flamenco-Regular.ttf._p_r_e_p.ttx Flamenco-Regular.ttf._h_m_t_x.ttx Flamenco-Regular.ttf.D_S_I_G_.ttx Flamenco-Regular.ttf._m_a_x_p.ttx Flamenco-Light.ttf.G_S_U_B_.ttx Flamenco-Light.ttf._l_o_c_a.ttx Flamenco-Light.ttf._h_e_a_d.ttx Flamenco-Light.ttf._g_l_y_f.ttx Flamenco-Light.ttf.GlyphOrder.ttx Flamenco-Light.ttf.G_D_E_F_.ttx Flamenco-Light.ttf.D_S_I_G_.ttx Flamenco-Light.ttf._m_a_x_p.ttx Flamenco-Light.ttf._c_m_a_p.ttx Flamenco-Light.ttf._n_a_m_e.ttx Flamenco-Light.ttf.G_P_O_S_.ttx Flamenco-Light.ttf._p_r_e_p.ttx Flamenco-Light.ttf._g_a_s_p.ttx Flamenco-Light.ttf.O_S_2f_2.ttx Flamenco-Light.ttf._p_o_s_t.ttx Flamenco-Light.ttf._h_m_t_x.ttx Flamenco-Light.ttf._h_h_e_a.ttx Flamenco-Light.ttf.F_F_T_M_.ttx src/Flamenco-Light.otf._h_e_a_d.ttx src/Flamenco-Light.otf._n_a_m_e.ttx src/Flamenco-Light.otf._h_m_t_x.ttx src/Flamenco-Light.otf._p_o_s_t.ttx src/Flamenco-Light.otf.O_S_2f_2.ttx src/Flamenco-Light.otf._k_e_r_n.ttx src/Flamenco-Light.otf._h_h_e_a.ttx src/Flamenco-Light.otf._m_a_x_p.ttx src/Flamenco-Light.otf.GlyphOrder.ttx src/Flamenco-Light.otf._c_m_a_p.ttx src/Flamenco-Light.otf.C_F_F_.ttx src/Flamenco-Regular.otf._m_a_x_p.ttx src/Flamenco-Regular.otf._h_m_t_x.ttx src/Flamenco-Regular.otf._h_h_e_a.ttx src/Flamenco-Regular.otf.O_S_2f_2.ttx src/Flamenco-Regular.otf._n_a_m_e.ttx src/Flamenco-Regular.otf._c_m_a_p.ttx src/Flamenco-Regular.otf._p_o_s_t.ttx src/Flamenco-Regular.otf._h_e_a_d.ttx src/Flamenco-Regular.otf.C_F_F_.ttx src/Flamenco-Regular.otf.GlyphOrder.ttx src/Flamenco-Regular.otf._k_e_r_n.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources
+### (2 of 6) pyfontaine
+### (3 of 6) Run upstream tests
+$ bakery-lint.py upstream-repo sources
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_bakery_yaml_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_copyright_notices_same_across_family(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_description_html_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_fontlog_txt_exists(): FAIL
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_metadata_json_exists(): OK
+$ fontaine --collections subsets --text /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular.ttf.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light.ttf.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light.otf.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular.otf.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular-TTF.sfd /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light-TTF.sfd > fontaine.txt
+WARNING: Please install [PyICU](https://pypi.python.org/pypi/PyICU) toenable [feature], perhaps with: pip install pyicu
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_contours(): OK
+pyfontaine error: Not a TrueType or OpenType font (bad sfntVersion)
+pyfontaine process has been failed
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_points(): OK
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_test_prepolation_glyph_names(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_component(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_mark_to_mark(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_own_glyphs(): OK
+$ bakery-lint.py upstream-ttx Flamenco-Regular.ttf.ttx
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular.ttf.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+$ bakery-lint.py upstream-ttx Flamenco-Light.ttf.ttx
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light.ttf.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+$ bakery-lint.py upstream-ttx Flamenco-Light.otf.ttx
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light.otf.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): OK
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+$ bakery-lint.py upstream-ttx Flamenco-Regular.otf.ttx
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular.otf.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): OK
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+$ bakery-lint.py upstream Flamenco-Regular-TTF.sfd
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_familyname_less_than_32_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_fullfontname_less_than_64_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_postscriptname_consistof_allowed_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_postscriptname_less_than_30_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_stylename_less_than_32_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_weight_value_range_between_250_and_900(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_has_rupee(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_A(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_A_a_glyph_instance(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_ended_ufo(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_folder(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_fsType_eq_1(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_it_exists(): ERROR
+$ bakery-lint.py upstream Flamenco-Light-TTF.sfd
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_familyname_less_than_32_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_fullfontname_less_than_64_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_postscriptname_consistof_allowed_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_postscriptname_less_than_30_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_stylename_less_than_32_chars(): OK
+bakery_lint.tests.upstream.test_check_ufo_fontfamily_recommendations.TestUFOFontFamilyNamingTest.test_weight_value_range_between_250_and_900(): OK
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_has_rupee(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_A(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_A_a_glyph_instance(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_ended_ufo(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_folder(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_is_fsType_eq_1(): ERROR
+bakery_lint.tests.upstream.test_check_ufo_requirements.UfoOpenTest.test_it_exists(): ERROR
+### (4 of 6) Convert sources to TTF
+$ ttx -d /home/travis/build/fontdirectory/flamenco/builds/build /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light.ttx /home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular.ttx
+$ font2ttf.py sources/Flamenco-Light.otf Flamenco-Light.ttf
+Success: Generated OpenType-TTF (/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf)
+strippedname:/home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular-TTF.sfd
+strippedname:/home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light-TTF.sfd
+Compiling "/home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Light.ttx" to "/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.otf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'name' table...
+Parsing 'cmap' table...
+Parsing 'post' table...
+Parsing 'CFF ' table...
+Parsing 'hmtx' table...
+Parsing 'kern' table...
+Compiling "/home/travis/build/fontdirectory/flamenco/builds/build/sources/Flamenco-Regular.ttx" to "/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.otf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'name' table...
+Parsing 'cmap' table...
+Parsing 'post' table...
+Parsing 'CFF ' table...
+Parsing 'hmtx' table...
+Parsing 'kern' table...
+strippedname:/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.otf
+$ font2ttf.py sources/Flamenco-Regular.otf Flamenco-Regular.ttf
+### Test Flamenco-Light.ttf
+$ bakery-lint.py result Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ bakery-fstype-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_file_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+Success: Generated OpenType-TTF (/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf)
+strippedname:/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.otf
+$ font2ttf.py sources/Flamenco-Regular-TTF.sfd Flamenco-Regular-TTF.ttf
+### Test Flamenco-Regular.ttf
+$ bakery-lint.py result Flamenco-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ bakery-fstype-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_file_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+Success: Generated OpenType-TTF (/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf)
+$ font2ttf.py sources/Flamenco-Light-TTF.sfd Flamenco-Light-TTF.ttf
+### Test Flamenco-Regular-TTF.ttf
+$ bakery-lint.py result Flamenco-Regular-TTF.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ bakery-fstype-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_file_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ bakery-encode-glyphs-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+Success: Generated OpenType-TTF (/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf)
+### Test Flamenco-Light-TTF.ttf
+$ bakery-lint.py result Flamenco-Light-TTF.ttf
+### (5 of 6) Generate METADATA.json (genmetadata.py)
+$ genmetadata.py /home/travis/build/fontdirectory/flamenco/builds/build
+{} exists
+Designer's name from font is: Luciano Vergara
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ bakery-fstype-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_file_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+Original size: 36140\nGzip size: 18905
+Family Name: Flamenco
+PS Name: Flamenco-Regular
+Full Name: Flamenco
+Style: normal
+Weight: 400
+Filename: Flamenco-Regular-TTF.ttf
+Copyright: Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names "Flamenco"
+Family Name: Flamenco
+PS Name: Flamenco-Light
+Full Name: Flamenco Light
+Style: normal
+Weight: 300
+Filename: Flamenco-Light-TTF.ttf
+Copyright: Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names "Flamenco"
+Family Name: Flamenco
+PS Name: Flamenco-Regular
+Full Name: Flamenco
+Style: normal
+Weight: 400
+Filename: Flamenco-Regular.ttf
+Copyright: Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names "Flamenco"
+Family Name: Flamenco
+PS Name: Flamenco-Light
+Full Name: Flamenco Light
+Style: normal
+Weight: 300
+Filename: Flamenco-Light.ttf
+Copyright: Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names "Flamenco"
+### (6 of 6) Run tests for METADATA.json
+$ bakery-lint.py metadata METADATA.json
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_latin(): FAIL
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_latin_ext(): FAIL
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_menu(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_more_than_500b(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_valid_html(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): OK
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): FAIL
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_daltonmaag_catalogue(): FAIL
+### Optimize TTF Flamenco-Light.ttf
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontbureau_catalogue(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ bakery-encode-glyphs-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+$ ls -l 'Flamenco-Light.ttf'* # look at the size savings of that subset process
+Flamenco-Light.ttf.opt: 32568 bytes
+Flamenco-Light.ttf: 34268 bytes
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf.opt /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+### Autohint TTFs (ttfautohint) Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+$ ls -l /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.*ttf # look at the size savings of that subset process
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): FAIL
+/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf: 32568 bytes
+/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.autohint.ttf: 48032 bytes
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.autohint.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+### Subset TTFs (pyftsubset) Flamenco-Light.ttf
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): OK
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): FAIL
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): FAIL
+### Optimize TTF Flamenco-Regular.ttf
+$ bakery-vmet-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+Generate Flamenco-Light.latin
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ bakery-encode-glyphs-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+Generate Flamenco-Light.menu
+strippedname:/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+$ ls -l 'Flamenco-Regular.ttf'* # look at the size savings of that subset process
+Flamenco-Regular.ttf.opt: 34620 bytes
+Flamenco-Regular.ttf: 36324 bytes
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf.opt /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+### Autohint TTFs (ttfautohint) Flamenco-Regular.ttf
+$ ls -l /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf: 34620 bytes
+/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.autohint.ttf: 50844 bytes
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.autohint.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+### Subset TTFs (pyftsubset) Flamenco-Regular.ttf
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): OK
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): OK
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+Generate Flamenco-Regular.latin
+Generate Flamenco-Regular.menu
+strippedname:/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+### Optimize TTF Flamenco-Regular-TTF.ttf
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontscom_catalogue(): OK
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+$ bakery-vmet-fix.py /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light.ttf
+$ ls -l 'Flamenco-Regular-TTF.ttf'* # look at the size savings of that subset process
+Flamenco-Regular-TTF.ttf.opt: 35072 bytes
+Flamenco-Regular-TTF.ttf: 36792 bytes
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf.opt /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+### Autohint TTFs (ttfautohint) Flamenco-Regular-TTF.ttf
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontshop_catalogue(): FAIL
+$ ls -l /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf: 35072 bytes
+/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.autohint.ttf: 52468 bytes
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.autohint.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+### Subset TTFs (pyftsubset) Flamenco-Regular-TTF.ttf
+Generate Flamenco-Regular-TTF.latin
+Generate Flamenco-Regular-TTF.menu
+strippedname:/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Regular-TTF.ttf
+Parameter              Flamenco-Regular-TTF.ttf    Flamenco-Light-TTF.ttf    Flamenco-Regular.ttf    Flamenco-Light.ttf    
+ymax                   800                         791                       800                     789                   
+hhea.ascent            800                         800                       800                     800                   
+OS/2.sTypoAscender     800                         800                       800                     800                   
+OS/2.usWinAscent       800                         800                       800                     800                   
+ymin                   -229                        -231                      -229                    -231                  
+hhea.descent           -231                        -231                      -231                    -231                  
+OS/2.sTypoDescender    -231                        -231                      -231                    -231                  
+OS/2.usWinDescent      231                         231                       231                     231                   
+hhea.lineGap           0                           0                         0                       0                     
+OS/2.sTypoLineGap      0                           0                         0                       0                     
+hhea total             1031                        1031                      1031                    1031                  
+typo total             1031                        1031                      1031                    1031                  
+win total              1031                        1031                      1031                    1031                  
+UPM:Heights            1000:1029                   1000:1022                 1000:1029               1000:1020             
+UPM:Heights %          102 %                       102 %                     102 %                   102 %                 
+
+
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontsmith_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_houseind_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_myfonts_catalogue(): FAIL
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_veer_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_family_is_listed_in_gwf(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_atleast_latin_menu_subsets_exist(): OK
+/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/tests/metadata_test.py:141: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+  self.assertTrue(designer in designers,
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_designer_exists_in_profiles_csv(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_items_dicts(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_no_dupes(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_has_unique_style_weight_pairs(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_license(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_no_unknown_top_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_subsets_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_top_keys_types(): FAIL
+bakery_lint.tests.downstream.test_check_subsets_exists.CheckSubsetsExist.test_check_subsets_exists(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_font_name_matches_family(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_family(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_family_values_are_all_the_same(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_filename_matches_postScriptName(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_font_have_regular(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fonts_fields_have_fontname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_is_equal_to_internal_font_fullname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_matches_postScriptName(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_postScriptName_matches_ttf_fontname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_400(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_normal(): FAIL
+bakery_lint.tests.downstream.test_check_monospace_agreements.CheckMonospaceAgreement.test_check_monospace_agreement(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckCanonicalWeights.test_check_canonical_weights(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckPostScriptNameMatchesWeight.test_postscriptname_contains_correct_weight(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFontWeightSameAsInMetadata.test_font_weight_same_as_in_metadata(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFullNameEqualCanonicalName.test_metadata_contains_current_font(): OK
+bakery_lint.tests.downstream.test_check_metadata_matches_nametable.CheckMetadataMatchesNameTable.test_check_metadata_matches_nametable(): OK
+bakery_lint.tests.downstream.test_check_files_menu_agreements.CheckFontsMenuAgreements.test_menu_file_agreement(): OK
+bakery_lint.tests.downstream.test_check_font_name_not_in_camelcase.CheckFontNameNotInCamelCase.test_fontname_not_in_camel_case(): OK
+bakery_lint.tests.downstream.test_check_canonical_styles.CheckCanonicalStyles.test_check_canonical_styles(): OK
+bakery_lint.tests.downstream.test_check_metadata_fields.CheckMetadataFields.test_check_metadata_fields(): OK
+bakery_lint.tests.downstream.test_check_canonical_filenames.CheckCanonicalFilenames.test_check_canonical_filenames(): OK
+bakery_lint.tests.downstream.test_check_familyname_matches_fontnames.CheckFamilyNameMatchesFontNames.test_check_familyname_matches_fontnames(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_encodings_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_names_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_number_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckItalicStyleMatchesMacStyle.test_check_italic_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckNormalStyleMatchesMacStyle.test_check_normal_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_menu_contains_proper_glyphs.CheckMenuSubsetContainsProperGlyphs.test_check_menu_contains_proper_glyphs(): FAIL
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_contains_correct_rfn(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_is_consistent_across_family(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_matches_pattern(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_metadata_copyright_size(): OK
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_copyrighttxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_description_exists(): OK
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_fontlogtxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_licensetxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ bakery-encode-glyphs-fix.py --autofix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): OK
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): OK
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf.fix /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+### Optimize TTF Flamenco-Light-TTF.ttf
+$ ls -l 'Flamenco-Light-TTF.ttf'* # look at the size savings of that subset process
+Flamenco-Light-TTF.ttf.opt: 32980 bytes
+Flamenco-Light-TTF.ttf: 34696 bytes
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf.opt /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+### Autohint TTFs (ttfautohint) Flamenco-Light-TTF.ttf
+$ ls -l /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf: 32980 bytes
+/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.autohint.ttf: 48512 bytes
+$ mv /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.autohint.ttf /home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+### Subset TTFs (pyftsubset) Flamenco-Light-TTF.ttf
+Generate Flamenco-Light-TTF.latin
+Generate Flamenco-Light-TTF.menu
+strippedname:/home/travis/build/fontdirectory/flamenco/builds/build/Flamenco-Light-TTF.ttf
+{
+  "name": "Flamenco", 
+  "designer": "LatinoType", 
+  "license": "OFL", 
+  "visibility": "External", 
+  "category": "Display", 
+  "size": 19060, 
+  "fonts": [
+    {
+      "name": "Flamenco", 
+      "postScriptName": "Flamenco-Regular", 
+      "fullName": "Flamenco", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "Flamenco-Regular-TTF.ttf", 
+      "copyright": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names \"Flamenco\""
+    }, 
+    {
+      "name": "Flamenco", 
+      "postScriptName": "Flamenco-Light", 
+      "fullName": "Flamenco Light", 
+      "style": "normal", 
+      "weight": 300, 
+      "filename": "Flamenco-Light-TTF.ttf", 
+      "copyright": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names \"Flamenco\""
+    }, 
+    {
+      "name": "Flamenco", 
+      "postScriptName": "Flamenco-Regular", 
+      "fullName": "Flamenco", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "Flamenco-Regular.ttf", 
+      "copyright": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names \"Flamenco\""
+    }, 
+    {
+      "name": "Flamenco", 
+      "postScriptName": "Flamenco-Light", 
+      "fullName": "Flamenco Light", 
+      "style": "normal", 
+      "weight": 300, 
+      "filename": "Flamenco-Light.ttf", 
+      "copyright": "Copyright (c) 2011 by LatinoType Limitada (info@latinotype.com),  with Reserved Font Names \"Flamenco\""
+    }
+  ], 
+  "subsets": [
+    "latin"
+  ], 
+  "dateAdded": "2011-12-19"
+}
